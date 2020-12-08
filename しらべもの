@@ -1,0 +1,30 @@
+bootstrap
+container-fluid
+流動的に変化するコンテナ
+
+navbar navbar-dark navbar-light
+ナビゲーションバー
+
+navbar-brand
+表題のようなもの
+
+bg-dark
+background背景色指定
+自分でカスタムしたい色があるなら下記
+style="background-color:#e3f2fd;
+
+
+mb-3 pt-5
+
+m マージン
+p パディング
+trbl top right bottom left
+x top & bottom
+y right & left
+数値は0-5 又はauto。
+
+
+
+configヘルパ関数
+config('app.name', 'Vue Laravel SPA')
+config/appへ紐付けられていて
