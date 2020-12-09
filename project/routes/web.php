@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/product/{any}', function() {
     return view('admin.product');
-})->where('any', '.*');
+})->where('any', '.*')->name('adminProduct');

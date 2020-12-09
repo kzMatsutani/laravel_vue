@@ -1,5 +1,7 @@
 import VueRouter from 'vue-router';
 import ProductListComponent from './components/product/ProductListComponent';
+import ProductCreateComponent from './components/product/ProductCreateComponent';
+import ProductEditComponent from './components/product/ProductEditComponent';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -40,6 +42,17 @@ const router = new VueRouter({
             name: 'product.list',
             component: ProductListComponent
         },
+        {
+            path: '/admin/product/create',
+            name: 'product.create',
+            component: ProductCreateComponent
+        },
+        {
+            path: '/admin/product/:productId/edit',
+            name: 'product.edit',
+            component: ProductEditComponent,
+            props: true
+        }
     ]
 });
 

@@ -48,7 +48,11 @@
                     <td>画像</td>
                     <td>登録日時</td>
                     <td>更新日時</td>
-                    <td><a href=""><button type="button">新規登録</button></a></td>
+                    <td>
+                        <router-link v-bind:to="{name: 'product.create'}">
+                            <button type="button">新規登録</button>
+                        </router-link>
+                    </td>
                 </tr>
                 <tr v-for="product in products">
                     <td class="nowrap">{{ product.id }}</td>
@@ -58,10 +62,10 @@
                     <td>{{ product.created_at }}</td>
                     <td>{{ product.updated_at }}</td>
                     <td>
-                        <a href=""><button type="button" id="btn">編集</button></a>
-                        <form action="" method="post">
-                            <button type="submit" name="delete" value="">削除</button>
-                        </form>
+                        <router-link v-bind:to="{name: 'product.edit', params: {productId: product.id}}">
+                            <button type="button">編集</button>
+                        </router-link>
+                        <button v-on:click="deleteProduct(product.id)">削除</button>
                     </td>
                 </tr>
             </table>
@@ -83,6 +87,12 @@
                 axios.get('/api/admin/product')
                     .then((res) => {
                         this.products = res.data;
+                    });
+            },
+            deleteProduct(id) {
+                axios.delete('/api/admin/product/' + id)
+                    .then((res) => {
+                        this.getProducts();
                     });
             }
         },

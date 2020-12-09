@@ -20,7 +20,7 @@
         <nav class="admgl-nav">
             <ul>
                 <li><a href="" >top</a></li>
-                <li><a href="" >商品管理</a></li>
+                <li><a href="{{ url('/admin/product/list') }}" >商品管理</a></li>
                 <li><a href="" >売上管理</a></li>
                 <li><a href="#">スキル管理</a></li>
                 <li><a href="#">コミュニケーション管理</a></li>

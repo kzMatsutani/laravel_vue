@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/admin/product', 'ProductsController@index');
+Route::get('/admin/product/{product}', 'ProductsController@show');
+Route::post('/admin/product', 'ProductsController@store');
+Route::put('/admin/product/{product}', 'ProductsController@update');
+Route::delete('/admin/product/{product}', 'ProductsController@destroy');
